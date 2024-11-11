@@ -36,14 +36,14 @@ public class Home extends JFrame implements ActionListener {
         //creating a heading
         heading.setBounds(405, 10, 400, 70);
 //        heading.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        heading.setBackground(new Color(66, 239, 245));
+//        heading.setBackground(new Color(66, 239, 245));
         heading.setLayout(new BorderLayout());
 
         //writing a heading
         header.setHorizontalAlignment(JLabel.CENTER);
         header.setVerticalAlignment(JLabel.CENTER);
         header.setFont(new Font("Calibri", Font.BOLD, 45));
-        header.setForeground(new Color(29, 182, 209));
+//        header.setForeground(new Color(29, 182, 209));
         header.setText("Resume Builder 1.0");
 
         heading.add(header);
@@ -55,15 +55,15 @@ public class Home extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new Color(66, 239, 245));
+//        this.getContentPane().setBackground(new Color(66, 239, 245));
         this.setTitle("Resume Builder");
         ImageIcon icon = new ImageIcon("frame icon.jpg");
         this.setIconImage(icon.getImage());
 
         //creating the main panel for all the info
         main.setBounds(100, 100, 1000, 500);
-//        main.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        main.setBackground(new Color(68, 235, 215));
+        main.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+//        main.setBackground(new Color(68, 235, 215));
         main.setLayout(null);
 
         //setting up the box containing the log in stuff
@@ -77,35 +77,37 @@ public class Home extends JFrame implements ActionListener {
         //setting up the text fields for login in the box
         name.setBounds(25, 80, 240, 40);
         name.setFont(new Font("Calibri", Font.ITALIC, 20));
+        name.setText("Username");
         box.add(name);
 
         pass.setBounds(25, 180, 240, 40);
         pass.setFont(new Font("Calibri", Font.ITALIC, 20));
+        pass.setText("Password");
         box.add(pass);
 
         //setting up the about section of the main panel
         about.setBounds(100, 50, 300, 350);
 //        about.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        about.setText("<html>easy to use tool to help <br> create a proper resume in just a few clicks and <br> hope that this works</html>");
-        about.setForeground(Color.WHITE);
-        about.setFont(new Font("Monotone", Font.TRUETYPE_FONT, 30));
+        about.setText("<html> a humble project by Yathansh and gang<br> to help some useless idiots create better resumes</html>");
+        about.setForeground(Color.BLACK);
+        about.setFont(new Font("calibri", Font.TRUETYPE_FONT, 15));
         main.add(about);
 
         //adding the document image in the home page
-        ImageIcon ini = new ImageIcon("home page pic.jpg");
-        Image temp = ini.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
-        ImageIcon docu = new ImageIcon(temp);
+//        ImageIcon ini = new ImageIcon("home page final.jpg");
+//        Image temp = ini.getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT);
+//        ImageIcon docu = new ImageIcon(temp);
 
-        img.setBounds(150, 320, 200, 200);
+//        img.setBounds(150, 320, 200, 200);
 //        img.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        img.setIcon(docu);
-        main.add(img);
+//        img.setIcon(docu);
+//        main.add(img);
 
         //adding an error for wrong sign in details
         error.setBounds(650, 350, 200, 40);
 //        error.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         error.setText("*Account doesn't exist");
-        error.setForeground(new Color(68, 235, 215));
+        error.setForeground(new Color(238, 238, 238));
         error.setFont(new Font("Calibri", Font.ITALIC, 20));
         main.add(error);
 
@@ -124,9 +126,9 @@ public class Home extends JFrame implements ActionListener {
         signIn = new JButton();
         signIn.setText("Sign in");
         signIn.setFont(new Font("Monotone", Font.BOLD, 20));
-        signIn.setForeground(new Color(29, 182, 209));
+        signIn.setForeground(Color.BLACK);
         signIn.setFocusable(false);
-        signIn.setBackground(new Color(68, 235, 215));
+        signIn.setBackground(Color.WHITE);
         signIn.setBounds(0, 0, 140, 50);
         signIn.addActionListener(this);
         buttonIn.add(signIn);
@@ -134,9 +136,9 @@ public class Home extends JFrame implements ActionListener {
         signUp = new JButton();
         signUp.setText("Sign up");
         signUp.setFont(new Font("Monotone", Font.BOLD, 20));
-        signUp.setForeground(new Color(29, 182, 209));
+        signUp.setForeground(Color.WHITE);
         signUp.setFocusable(false);
-        signUp.setBackground(new Color(68, 235, 215));
+        signUp.setBackground(Color.BLACK);
         signUp.setBounds(0, 0, 140, 50);
         signUp.addActionListener(this);
         buttonUp.add(signUp);
@@ -201,6 +203,7 @@ public class Home extends JFrame implements ActionListener {
             for (int i = 0; i < userList.size(); i++) {
                 if (userList.get(i).equals(name.getText()) && passList.get(i).equals(pass.getText())) {
                     this.dispose();
+                    new Form1();
                     break;
                 }
             }
