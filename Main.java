@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        new Form1();
+        new Form2();
 //        Scanner sc = new Scanner(System.in);
 //        File username = new File("username.txt");
 //        File password = new File("password.txt");
