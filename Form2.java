@@ -12,6 +12,24 @@ public class Form2 extends JFrame {
         JProgressBar progressBar = new JProgressBar();
         JButton submit = new JButton();
 
+        //adding all the stuff for the drop-down menus
+        String[] schoolQuali ={"10th passed", "12th passed", "Undergrad", "Postgrad"};
+        String[] fieldQuali = {"Science and Engineering", "Accounting and Commerce", "Arts and Humanities", "Biology and Medicine"};
+
+        JComboBox checkSchool = new JComboBox(schoolQuali);
+        JComboBox checkField = new JComboBox(fieldQuali);
+
+        checkSchool.setBounds(150, 100, 80,80);
+        checkSchool.setFocusable(false);
+        checkSchool.setSelectedIndex(0);
+
+        checkField.setBounds(150, 240, 80,80);
+        checkField.setFocusable(false);
+        checkField.setSelectedIndex(0);
+
+        form.add(checkSchool);
+        form.add(checkField);
+
         //setting up a basic frame
         this.setSize(1210, 760);
         this.setResizable(false);

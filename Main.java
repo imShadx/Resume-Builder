@@ -4,6 +4,9 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         new Form2();
+
+        //**ORIGINAL CODE FOR RUNNING ON CONSOLE**
+
 //        Scanner sc = new Scanner(System.in);
 //        File username = new File("username.txt");
 //        File password = new File("password.txt");
