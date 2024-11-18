@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Form4 extends JFrame implements ActionListener{
     //adding a string array to store all the hobbies
-    public ArrayList<String> skillHobby;
+    public static ArrayList<String> skillHobby;
 
     //declaring the text fields for all the skills/hobbies
     JTextField sk1;
@@ -137,6 +137,7 @@ public class Form4 extends JFrame implements ActionListener{
             skillHobby.add(sk2.getText());
             skillHobby.add(sk3.getText());
 
+            new Form5();
             this.dispose();
         }
     }

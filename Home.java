@@ -193,6 +193,9 @@ public class Home extends JFrame implements ActionListener {
 
                 loadUserAndPassData();
 
+                error.setText("Account created!");
+                error.setForeground(Color.BLACK);
+
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

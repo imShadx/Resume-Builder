@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class End extends JFrame {
+public class End extends JFrame implements ActionListener{
     JButton submit;
 
     End() {
@@ -57,6 +57,7 @@ public class End extends JFrame {
         submit.setForeground(Color.WHITE);
         submit.setFont(new Font("Monotone", Font.BOLD, 20));
         submit.setFocusable(false);
+        submit.addActionListener(this);
 
         form.add(submit);
 
@@ -101,5 +102,13 @@ public class End extends JFrame {
         this.add(form);
         this.add(progressBar);
         this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == submit){
+            new Resume();
+            this.dispose();
+        }
     }
 }

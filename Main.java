@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        new End();
+        new Home();
 
         //**ORIGINAL CODE FOR RUNNING ON CONSOLE**
 

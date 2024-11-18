@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Form3 extends JFrame implements ActionListener{
     //adding a string array to store all the work data
-    public ArrayList<String> workData;
+    public static ArrayList<String> workData;
 
     //declaring the text fields for work exp
     JTextField exp1;

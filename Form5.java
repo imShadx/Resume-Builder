@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Form5 extends JFrame implements ActionListener {
     //adding a string array to store the about me part
-    public ArrayList<String> infoMe;
+    public static ArrayList<String> infoMe;
 
     //declaring the text fields for all the skills/hobbies
     JTextField about1;
