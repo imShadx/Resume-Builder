@@ -2,17 +2,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class Form2 extends JFrame implements ActionListener {
-    //global variables for the education qualifications
-    public static String schoolCheck;
-    public static String fieldCheck;
+public class Form5 extends JFrame implements ActionListener {
+    //adding a string array to store the about me part
+    public ArrayList<String> infoMe;
+
+    //declaring the text fields for all the skills/hobbies
+    JTextField about1;
+    JTextField about2;
+    JTextField about3;
 
     JButton submit;
-    JComboBox checkSchool;
-    JComboBox checkField;
 
-    Form2() {
+    Form5() {
         //copy from here
         JPanel form = new JPanel();
         JPanel deco = new JPanel();
@@ -20,25 +23,33 @@ public class Form2 extends JFrame implements ActionListener {
         JLabel instrucLabel = new JLabel();
         JLabel decoLabel = new JLabel();
         JProgressBar progressBar = new JProgressBar();
+        about1 = new JTextField();
+        about2 = new JTextField();
+        about3 = new JTextField();
         submit = new JButton();
 
-        //adding all the stuff for the drop-down menus
-        String[] schoolQuali = {"10th passed", "12th passed", "Undergrad", "Postgrad"};
-        String[] fieldQuali = {"Science and Engineering", "Accounting and Commerce", "Arts and Humanities", "Biology and Medicine"};
+        //setting up the text fields for all the hobbies
+        about1.setBounds(30, 80, 300, 40);
+        about1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        checkSchool = new JComboBox(schoolQuali);
-        checkField = new JComboBox(fieldQuali);
+        about2.setBounds(30, 150, 300, 40);
+        about2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        checkSchool.setBounds(50, 80, 200, 50);
-        checkSchool.setFocusable(false);
-        checkSchool.setSelectedIndex(0);
+        about3.setBounds(30, 220, 300, 40);
+        about3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        checkField.setBounds(50, 200, 200, 50);
-        checkField.setFocusable(false);
-        checkField.setSelectedIndex(0);
+        form.add(about1);
+        form.add(about2);
+        form.add(about3);
 
-        form.add(checkSchool);
-        form.add(checkField);
+        infoMe = new ArrayList<>();
+
+        //adding the aboutMe tag
+        JLabel skillTag = new JLabel();
+        skillTag.setText("Something about yourself:");
+        skillTag.setFont(new Font("Monotone", Font.BOLD, 15));
+        skillTag.setBounds(30, 30, 300, 40);
+        form.add(skillTag);
 
         //setting up a basic frame
         this.setSize(1210, 760);
@@ -55,7 +66,7 @@ public class Form2 extends JFrame implements ActionListener {
         progressBar.setBounds(50, 100, 600, 20);
         progressBar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 //        progressBar.setStringPainted(true);
-        progressBar.setValue(20);
+        progressBar.setValue(80);
         progressBar.setForeground(Color.BLACK);
 
         //setting up the form panel
@@ -121,11 +132,11 @@ public class Form2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == submit){
-            schoolCheck = (String) checkSchool.getSelectedItem();
-            fieldCheck = (String) checkField.getSelectedItem();
+        if(e.getSource() == submit){
+            infoMe.add(about1.getText());
+            infoMe.add(about2.getText());
+            infoMe.add(about3.getText());
 
-            new Form3();
             this.dispose();
         }
     }
