@@ -4,18 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Form5 extends JFrame implements ActionListener {
-    //adding a string array to store the about me part
-    public ArrayList<String> infoMe;
-
-    //declaring the text fields for all the skills/hobbies
-    JTextField about1;
-    JTextField about2;
-    JTextField about3;
-
+public class End extends JFrame {
     JButton submit;
 
-    Form5() {
+    End() {
         //copy from here
         JPanel form = new JPanel();
         JPanel deco = new JPanel();
@@ -23,33 +15,7 @@ public class Form5 extends JFrame implements ActionListener {
         JLabel instrucLabel = new JLabel();
         JLabel decoLabel = new JLabel();
         JProgressBar progressBar = new JProgressBar();
-        about1 = new JTextField();
-        about2 = new JTextField();
-        about3 = new JTextField();
         submit = new JButton();
-
-        //setting up the text fields for all the hobbies
-        about1.setBounds(30, 80, 300, 40);
-        about1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-        about2.setBounds(30, 150, 300, 40);
-        about2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-        about3.setBounds(30, 220, 300, 40);
-        about3.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-        form.add(about1);
-        form.add(about2);
-        form.add(about3);
-
-        infoMe = new ArrayList<>();
-
-        //adding the aboutMe tag
-        JLabel skillTag = new JLabel();
-        skillTag.setText("Something about yourself:");
-        skillTag.setFont(new Font("Monotone", Font.BOLD, 15));
-        skillTag.setBounds(30, 30, 300, 40);
-        form.add(skillTag);
 
         //setting up a basic frame
         this.setSize(1210, 760);
@@ -62,11 +28,19 @@ public class Form5 extends JFrame implements ActionListener {
         ImageIcon icon = new ImageIcon("frame icon.jpg");
         this.setIconImage(icon.getImage());
 
+        //adding the final note
+        JLabel note = new JLabel();
+        note.setText("Your Resume is ready!");
+        note.setBounds(60, 100, 200, 200);
+        note.setFont(new Font("Monotone", Font.BOLD, 18));
+
+        form.add(note);
+
         //setting up the progress bar
         progressBar.setBounds(50, 100, 600, 20);
         progressBar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 //        progressBar.setStringPainted(true);
-        progressBar.setValue(80);
+        progressBar.setValue(100);
         progressBar.setForeground(Color.BLACK);
 
         //setting up the form panel
@@ -76,14 +50,13 @@ public class Form5 extends JFrame implements ActionListener {
         form.setLayout(null);
 
         //adding the submit button
-        submit.setBounds(85, 350, 150, 40);
+        submit.setBounds(70, 250, 200, 40);
         submit.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        submit.setText("Submit");
+        submit.setText("Less go");
         submit.setBackground(Color.BLACK);
         submit.setForeground(Color.WHITE);
         submit.setFont(new Font("Monotone", Font.BOLD, 20));
         submit.setFocusable(false);
-        submit.addActionListener(this);
 
         form.add(submit);
 
@@ -108,7 +81,7 @@ public class Form5 extends JFrame implements ActionListener {
 //     instruc.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         instruc.setLayout(new BorderLayout());
 
-        instrucLabel.setText("Kindly enter your info below.");
+        instrucLabel.setText("And here we are :)");
         instrucLabel.setFont(new Font("monotone", Font.BOLD, 20));
         instrucLabel.setHorizontalAlignment(JLabel.LEFT);
         instrucLabel.setVerticalAlignment(JLabel.BOTTOM);
@@ -128,17 +101,5 @@ public class Form5 extends JFrame implements ActionListener {
         this.add(form);
         this.add(progressBar);
         this.setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == submit){
-            infoMe.add(about1.getText());
-            infoMe.add(about2.getText());
-            infoMe.add(about3.getText());
-
-            new End();
-            this.dispose();
-        }
     }
 }
