@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 
-public class Resume extends JFrame{
+public class Resume extends JFrame {
     Resume() {
         JPanel main = new JPanel();
         JPanel heading = new JPanel();
@@ -34,19 +34,29 @@ public class Resume extends JFrame{
         quali.setLayout(new BorderLayout());
 
         JPanel PQ = new JPanel();
-        PQ.setBounds(30,100,500, 200 );
+        PQ.setBounds(30, 100, 350, 200);
         PQ.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         PQ.setLayout(new BorderLayout());
 
         JPanel skills = new JPanel();
-        skills.setBounds(30, 420, 300,350 );
+        skills.setBounds(30, 320, 300, 200);
         skills.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         skills.setLayout(new BorderLayout());
 
         JPanel aBout = new JPanel();
-        aBout.setBounds(350, 420, 300, 350);
+        aBout.setBounds(30, 540, 300, 200);
         aBout.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         aBout.setLayout(new BorderLayout());
+
+        JPanel beg = new JPanel();
+        beg.setBounds(400, 360, 400, 250);
+        beg.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        beg.setLayout(new BorderLayout());
+
+        JPanel contact = new JPanel();
+        contact.setBounds(550, 650, 300, 100);
+//        contact.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        contact.setLayout(new BorderLayout());
 
         main.add(name);
         main.add(quali);
@@ -54,6 +64,8 @@ public class Resume extends JFrame{
         main.add(skills);
         main.add(aBout);
         main.add(hahaImg);
+        main.add(beg);
+        main.add(contact);
 
         //getting all the info from other classes
 
@@ -62,7 +74,7 @@ public class Resume extends JFrame{
 
         StringBuilder PQtext = new StringBuilder("<html>");
         for (String item : Form3.workData) {
-            PQtext.append(item).append("<br> <br> <br>");
+            PQtext.append(item).append("<br> <br>");
         }
         PQtext.append("</html>");
 
@@ -85,12 +97,14 @@ public class Resume extends JFrame{
         JLabel PQL = new JLabel();
         JLabel skillsL = new JLabel();
         JLabel aBoutL = new JLabel();
+        JLabel begL = new JLabel();
+        JLabel contactL = new JLabel();
 
         imgwhy.setIcon(haha2);
         hahaImg.add(imgwhy);
 
         nameL.setText(fullName);
-        nameL.setFont(new Font("Monotone", Font.BOLD, 20));
+        nameL.setFont(new Font("Monotone", Font.BOLD, 15));
         nameL.setHorizontalAlignment(JLabel.LEFT);
         name.add(nameL);
 
@@ -99,23 +113,36 @@ public class Resume extends JFrame{
         qualiL.setHorizontalAlignment(JLabel.LEFT);
         quali.add(qualiL);
 
-        PQL.setText(PQtext.toString());
-        PQL.setFont(new Font("Monotone", Font.BOLD, 20));
+        PQL.setText("<html> Professional Qualifications: <br><br> <html>" + PQtext.toString());
+        PQL.setFont(new Font("Monotone", Font.BOLD, 15));
         PQL.setHorizontalAlignment(JLabel.LEFT);
         PQL.setVerticalAlignment(JLabel.TOP);
         PQ.add(PQL);
 
-        skillsL.setText(skillText.toString());
-        skillsL.setFont(new Font("Monotone", Font.BOLD, 20));
+        skillsL.setText("<html> Skills and Hobbies: <br><br> <html>" + skillText.toString());
+        skillsL.setFont(new Font("Monotone", Font.BOLD, 15));
         skillsL.setHorizontalAlignment(JLabel.LEFT);
         skillsL.setVerticalAlignment(JLabel.TOP);
         skills.add(skillsL);
 
-        aBoutL.setText(aboutText.toString());
-        aBoutL.setFont(new Font("Monotone", Font.BOLD, 20));
+        aBoutL.setText("<html> About me: <br><br> <html>" + aboutText.toString());
+        aBoutL.setFont(new Font("Monotone", Font.BOLD, 15));
         aBoutL.setHorizontalAlignment(JLabel.LEFT);
         aBoutL.setVerticalAlignment(JLabel.TOP);
         aBout.add(aBoutL);
+
+        begL.setText("<html>A hard worker, team player yada yada whatever, real talk <br>though I really need this job like right now cuz <br>my son really wants a happy meal but I can't <br>really afford that after the divorce so pls get <br>me a job and oh I also have knee surgery <br>tomorrow but really I'm just a chill guy haha <br>like those insta reels but no fr tho I actually <br>badly need this job or I won't be able to <br>afford rent this month and the judge will give <br>custody over to my ex-witch so pls gimme the <br>job I beg u, like I'll do anything you want <br>with all due diligence so pretty please</html>");
+
+        begL.setFont(new Font("Monotone", Font.ITALIC, 15));
+        begL.setHorizontalAlignment(JLabel.LEFT);
+        begL.setVerticalAlignment(JLabel.TOP);
+        beg.add(begL);
+
+        contactL.setText("<html>Phone no. : 987-idk forgot <br>email: weird_dude@yahoo.com </html>");
+        contactL.setFont(new Font("Monotone", Font.BOLD,15));
+        contactL.setHorizontalAlignment(JLabel.CENTER);
+        contactL.setVerticalAlignment(JLabel.CENTER);
+        contact.add(contactL);
 
         //adding a final disclaimer
         disc.setText("*Resume Builder is not responsible for any user being kicked out of a job interview fo having a stupid resume");
